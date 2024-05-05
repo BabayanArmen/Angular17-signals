@@ -1,1 +1,16 @@
-<p>todo-list works!</p>
+<input #x type="text">
+<button (click)="addToDo(x.value)">add</button>
+
+@if (todoes().length > 0) {
+    <ul>
+        @for (todo of todoes(); track todo.id) {
+            <li>
+                <span>{{todo.id}}</span>
+                <span>{{todo.title}}</span>
+                <button (click)="remove(todo.id)">x</button>
+            </li>
+        }
+    </ul>
+} @else {
+    <span>no data</span>
+}
