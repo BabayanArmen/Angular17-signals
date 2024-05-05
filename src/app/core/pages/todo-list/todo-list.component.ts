@@ -21,7 +21,7 @@ export class TodoListComponent implements OnInit {
   }
 
   public addToDo(value: string) {
-    this.todoes.update(x => [...x, {id: this.todoes().length + 1, title: value}] )
+    this.todoes.update(x => [...x, {id: this.todoes().length + 1, title: value}]);
   }
 
   public remove(id: number) {
