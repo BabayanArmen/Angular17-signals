@@ -1,0 +1,20 @@
+<div class="menu_wrapper" #navbar (mouseover)="openCloseMenu(true)"(mouseleave)="openCloseMenu(false)">
+
+    <div class="menu_toggle">
+        <input type="checkbox" #menutoggle [(ngModel)]="menuToggle" (ngModelChange)="pinMenu()">
+    </div>
+
+    @if (menuItems.length > 0) {
+        @for (item of menuItems; track null) {
+
+            <a class="menu_item" [routerLink]="item.routerLink" [title]="item.title">
+                <span class="icon">&#9780;</span>
+                <span class="title">{{item.title}}</span>
+            </a>
+
+        }
+    } @else {
+        <span>no menu items</span>
+    }
+
+</div>
