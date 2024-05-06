@@ -14,3 +14,15 @@
 } @else {
     <span>no data</span>
 }
+
+<hr>
+<p>Computed signals</p>
+<ul>
+  @for (x of todoesComputed(); track null) {
+    <li>{{x.title}}</li>
+  }
+</ul>
+
+<span>total {{total()}}</span>
+
+<!-- <span>{{names()}}</span> -->

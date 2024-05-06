@@ -5,10 +5,12 @@ import { TodoListComponent } from './core/pages/todo-list/todo-list.component';
 export const routes: Routes = [
     {
         path: '',
-        component: HomeComponent
+        // component: HomeComponent
+        loadComponent: () => import("./core/pages/home/home.component").then((m) => m.HomeComponent)
     },
     {
         path: 'todo',
-        component: TodoListComponent
+        // component: TodoListComponent
+        loadComponent: () => import("./core/pages/todo-list/todo-list.component").then((m) => m.TodoListComponent)
     }
 ];
