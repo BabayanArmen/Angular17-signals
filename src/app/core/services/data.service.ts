@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ToDo } from '../models/todo.model';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -20,9 +21,15 @@ export class DataService {
     },
   ]
 
-  constructor() { }
+  constructor(
+    private http: HttpClient
+  ) {}
 
   public getToDoes() {
     return this.todoes;
+  }
+
+  public getDummyData() {
+    return this.http.get<any>("https://dummyjson.com/products");
   }
 }

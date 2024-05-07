@@ -12,5 +12,9 @@ export const routes: Routes = [
         path: 'todo',
         // component: TodoListComponent
         loadComponent: () => import("./core/pages/todo-list/todo-list.component").then((m) => m.TodoListComponent)
-    }
+    },
+    {
+      path: 'defer',
+      loadComponent: () => import("./core/pages/defer-example/defer-example.component").then((m) => m.DeferExampleComponent)
+  }
 ];

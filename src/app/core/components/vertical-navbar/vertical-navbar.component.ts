@@ -26,6 +26,10 @@ export class VerticalNavbarComponent {
       title: "ToDo-List",
       routerLink: "/todo"
     },
+    {
+      title: "defer example",
+      routerLink: "/defer"
+    },
   ]
 
   pinMenu() {

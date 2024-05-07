@@ -1,0 +1,52 @@
+<p>defer-example works!</p>
+
+@for (item of [1, 2, 3, 4,5, 6, 7, 8]; track $index) {
+  <div class="info_block">
+    <span>some info</span>
+  </div>
+}
+
+@defer (on viewport) {
+  <app-large-component></app-large-component>
+}
+@placeholder {
+  <span>loading</span>
+}
+<!-- @placeholder (minimum 4s){
+  <span>loading</span>
+} -->
+<!-- @loading (after 5s; minimum 5s){
+  <span>loading</span>
+} -->
+
+<!-- The interaction happens either when the user clicks on the target element, or when it types something in it, in case the element is an input. -->
+<!-- @defer (on interaction) {
+  <app-large-component></app-large-component>
+}
+@placeholder {
+  <span>loading</span>
+} -->
+
+<!-- This trigger is fired when the user hovers over an element of the page. The hover events are mouseenter and focusin. -->
+<!-- @defer (on hover) {
+  <app-large-component></app-large-component>
+}
+@placeholder {
+  <span>loading</span>
+} -->
+
+<!-- on immediate
+on timer(5s)
+on timer(5s); prefetch on idle
+on interaction; prefetch on viewpor
+when show; prefetch when load
+load: boolean = false;
+show: boolean = false; -->
+
+@for (item of [1, 2, 3, 4, 5, 6, 7, 8]; track $index) {
+  <div class="info_block">
+    <span>some info</span>
+  </div>
+}
+
+
