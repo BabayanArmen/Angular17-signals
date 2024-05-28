@@ -16,8 +16,12 @@ export class RecieverComponent {
 
   constructor() {
     effect(() => {
-      this.todoes = this.dataSignalsService.sharedData()
+      this.todoes = this.dataSignalsService.sharedData();
     })
+  }
+
+  public removeToDo(todo: ToDo) {
+    this.dataSignalsService.removeData(todo);
   }
 
 }

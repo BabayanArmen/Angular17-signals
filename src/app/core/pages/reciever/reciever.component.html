@@ -5,6 +5,7 @@
             @for (todo of todoes; track todo.id) {
                 <li>
                     <span>{{todo.title}}</span>
+                    <button (click)="removeToDo(todo)">-</button>
                 </li>
             }
         </ul>

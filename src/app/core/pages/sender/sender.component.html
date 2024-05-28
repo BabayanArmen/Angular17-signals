@@ -2,4 +2,13 @@
     <p>Sender</p>
     <input type="text" (keydown.enter)="sendData($event)">
 
+    <br>
+
+    @if (todoes.length > 0) {
+        <ul>
+            @for (todo of todoes; track todo.id) {
+                <li>{{todo.title}}</li>
+            }
+        </ul>
+    }
 </div>
