@@ -1,0 +1,12 @@
+<div class="card_block">
+    <p>Reciever</p>
+    @if (todoes.length > 0) {
+        <ul>
+            @for (todo of todoes; track todo.id) {
+                <li>
+                    <span>{{todo.title}}</span>
+                </li>
+            }
+        </ul>
+    }
+</div>
