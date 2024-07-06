@@ -36,7 +36,10 @@ export class TodoListComponent implements OnInit {
     this.todoes.update(x => [...x, {id: this.todoes().length + 1, title: value}]);
   }
 
-  public remove(id: number) {
+  public remove(id?: number) {
+    if(!id) {
+      return;
+    }
     //// method 1
     // let res = this.todoes().filter(x => x.id !== id);
     // this.todoes.update(x => [...res]);

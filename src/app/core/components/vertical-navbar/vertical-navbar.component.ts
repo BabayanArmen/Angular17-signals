@@ -30,6 +30,10 @@ export class VerticalNavbarComponent {
       title: "defer example",
       routerLink: "/defer"
     },
+    {
+      title: "State",
+      routerLink: "/state"
+    }
   ]
 
   pinMenu() {

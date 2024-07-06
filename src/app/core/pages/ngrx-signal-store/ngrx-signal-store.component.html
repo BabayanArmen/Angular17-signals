@@ -1,0 +1,20 @@
+<h4>NGRX Signal Store</h4>
+
+<hr>
+
+<input #input type="text" (keyup.enter)="addToDo(input.value)">
+
+@if(store.loading()) {
+    <span>loading...</span>
+}
+@else {
+    <ul>
+        @for (todo of store.todos(); track todo.id; let index = $index) {
+            <li>
+                <span>{{todo.title}}</span>
+                <button (click)="onDeleteTodo(todo.id!)">delete</button>
+                <input #updateInput type="text" placeholder="update" (keyup.enter)="onUpdateToDo({id: todo.id, title: updateInput.value})">
+            </li>
+        }
+    </ul>
+}

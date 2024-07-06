@@ -6,15 +6,20 @@ export const routes: Routes = [
     {
         path: '',
         // component: HomeComponent
-        loadComponent: () => import("./core/pages/home/home.component").then((m) => m.HomeComponent)
+        loadComponent: () => import("./core/pages/home/home.component").then((c) => c.HomeComponent)
     },
     {
         path: 'todo',
         // component: TodoListComponent
-        loadComponent: () => import("./core/pages/todo-list/todo-list.component").then((m) => m.TodoListComponent)
+        loadComponent: () => import("./core/pages/todo-list/todo-list.component").then((c) => c.TodoListComponent)
     },
     {
-      path: 'defer',
-      loadComponent: () => import("./core/pages/defer-example/defer-example.component").then((m) => m.DeferExampleComponent)
-  }
+        path: 'defer',
+        loadComponent: () => import("./core/pages/defer-example/defer-example.component").then((c) => c.DeferExampleComponent)
+    },
+    {
+        path: 'state',
+        loadComponent: () => import("./core/pages/ngrx-signal-store/ngrx-signal-store.component").then((c) => c.NgrxSignalStoreComponent)
+    }
 ];
+ 
