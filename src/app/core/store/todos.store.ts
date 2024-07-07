@@ -1,6 +1,6 @@
-import { patchState, signalStore, withComputed, withMethods, withState } from "@ngrx/signals";
+import { patchState, signalState, signalStore, withComputed, withMethods, withState } from "@ngrx/signals";
 import { ToDo } from "../models/todo.model"
-import { inject } from "@angular/core";
+import { computed, inject, OnInit } from "@angular/core";
 import { TodoDataService } from "../services/todo-data.service";
 import { lastValueFrom } from "rxjs";
 import { state } from "@angular/animations";
@@ -85,3 +85,40 @@ export const ToDosStore = signalStore(
     ),
     // withComputed((state) => ({}))
 );
+
+
+//////////// signalState example /////////////
+// export class SomeComponent implements OnInit {
+
+//     private todoesService = inject(TodoDataService);
+
+//     state = signalState<ToDoState>({
+//         todos: [],
+//         loading: false
+//     })
+    
+//     async loadTodoes() {
+//         patchState(this.state, {loading: true});
+
+//         const result = await lastValueFrom(this.todoesService.get());
+        
+//         patchState(this.state, {todos: result});
+//     }
+
+//     filteredToDoState = computed(() => {
+//         const todos = this.state.todos();
+
+//         /// some conditions or any other logic thst will give us some result, for example some boolean value
+//         let res = true;
+//         return todos.filter(x => res); //// any filtering or some other logic you need
+
+//     })
+
+//     ngOnInit(): void {
+//         let todos = this.state.todos();
+//     }
+
+// } 
+
+
+
